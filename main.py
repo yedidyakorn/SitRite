@@ -13,7 +13,7 @@ def backAngle(a, b, x=(0, 0), y=(0, 1)):
     t = u[0] * v[0] + u[1] * v[1]
     return math.degrees(math.acos(t / b))
 
-
+#gets a pic as a frame and returns tha angle of the back
 def chackImg(frameinput):
     parser = argparse.ArgumentParser(description='Run keypoint detection')
     parser.add_argument("--device", default="cpu", help="Device to inference on")
@@ -27,11 +27,10 @@ def chackImg(frameinput):
     if MODE == "COCO":
         protoFile = "pose/coco/pose_deploy_linevec.prototxt"
         weightsFile = "pose/coco/pose_iter_440000.caffemodel"
-        nPoints = 4
+        nPoints = 18
         POSE_PAIRS = [[2, 8], [5, 11], [11, 12], [8, 9]]
 
-    frame = cv2.imread(frameinput)
-    frameCopy = np.copy(frame)
+    frameCopy = np.copy(frameinput)
     frameWidth = frame.shape[1]
     frameHeight = frame.shape[0]
     threshold = 0.1
@@ -123,5 +122,9 @@ def chackImg(frameinput):
 
 
 if __name__ == '__main__':
-
+    parser = argparse.ArgumentParser(description='Run keypoint detection')
+    parser.add_argument("--image_file", default="netanelS.jpg", help="Input image")
+    args = parser.parse_args()
+    frame = cv2.imread(args.image_file)
+    print(chackImg(frame))
     print("YOU WIN!")
