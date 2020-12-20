@@ -1,7 +1,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
-list_photo = ["1.PNG", "2.PNG", "3.PNG"]
+list_photo = ["1.PNG", "2.PNG", "3.PNG", "4.PNG", "5.PNG", "6.jpeg"]
 count = 0
 
 
@@ -21,7 +21,7 @@ def next(panel):
         panel.configure(image=img)
         panel.image = img  # keep a reference!
     else:
-        exit()
+        window.destroy()
 
 
 def prev(panel):
