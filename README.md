@@ -4,7 +4,7 @@
 
 
 
-SitRite -computer vision system that helps you to sit correctly during a work day. @Hackathon Great Minds 2020
+SitRite -computer vision system that helps you to sit correctly during a workday. @Hackathon Great Minds 2020
 
 
 Project descriptionAs part of Hackathon Great Minds 2020 we developed a computer vision system that helps every worker to sit correctly during a work day.
